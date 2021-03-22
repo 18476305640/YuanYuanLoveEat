@@ -1,0 +1,47 @@
+<template>
+    <div class="total">
+        <div class="title">
+            <span>猿猿外卖后台管理</span>
+        </div>
+        <div class="content">
+            <navs :navitem="['用户管理','商品管理']" />
+            <router-view />
+        </div>
+    </div>
+</template>
+<script>
+import Navs from 'components/content/Navs'
+export default {
+    name:"MainPage",
+    components: {
+        Navs
+    }
+}
+</script>
+<style scoped>
+    .total {
+        position:fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background-color:#f5f5f5;
+    }
+    .title {
+        width: 100%;
+        height: 50px;
+        background: #ffffff;
+        border-bottom: 1px solid #c1c1c1 ;
+    }
+    .title>span {
+        font-size: 25px;
+        line-height: 50px;
+        color:#333333 ;
+        padding-left:27px ;
+    }
+    .content {
+        width: 100%;
+        height: calc(100vh - 51px); /*知识点 lalc */
+    }
+    
+</style>
