@@ -4,8 +4,8 @@
             <span>猿猿外卖后台管理</span>
         </div>
         <div class="content">
-            <navs :navitem="['用户管理','商品管理']" />
-            <router-view />
+            <navs :navitem="['good','base']" />
+            <router-view  class="showStyle"/>
         </div>
     </div>
 </template>
@@ -43,5 +43,13 @@ export default {
         width: 100%;
         height: calc(100vh - 51px); /*知识点 lalc */
     }
-    
+    .showStyle { /*路由页面 */
+        position: absolute;
+        right: 0px;
+        top: 52px;
+        bottom: 0px;
+        left: 200px;
+        background: #ffffff;
+        border-left: 1px solid #dbd8d8;
+    }
 </style>

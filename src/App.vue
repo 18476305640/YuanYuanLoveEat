@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MainPage from './views/Home/MainPage'
+import MainPage from './views/home/MainPage'
 export default {
   name: 'App',
   components: {
