@@ -1,20 +1,25 @@
 <template>
     <div class="total">
-        <div class="title">
-            <span>猿猿外卖后台管理</span>
-        </div>
-        <div class="content">
-            <navs :navitem="['good','base']" />
-            <router-view  class="showStyle"/>
+        <login />
+        <div>
+            <div class="title">
+                <span>猿猿外卖后台管理</span>
+            </div>
+            <div class="content">
+                <navs :navitem="['good','base']" />
+                <router-view  class="showStyle"/>
+            </div>
         </div>
     </div>
 </template>
 <script>
 import Navs from 'components/content/Navs'
+import Login from 'components/content/Login'
 export default {
     name:"MainPage",
     components: {
-        Navs
+        Navs,
+        Login
     }
 }
 </script>
@@ -43,7 +48,7 @@ export default {
         width: 100%;
         height: calc(100vh - 51px); /*知识点 lalc */
     }
-    .showStyle { /*路由页面 */
+    .showStyle { /*路由页面   */
         position: absolute;
         right: 0px;
         top: 52px;
