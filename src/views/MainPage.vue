@@ -3,7 +3,7 @@
         <login />
         <div>
             <div class="title">
-                <span>猿猿外卖后台管理</span>
+                <span>GoPoint后台管理</span>
             </div>
             <div class="content">
                 <navs :navitem="['good','base']" />
@@ -37,12 +37,15 @@ export default {
         height: 50px;
         background: #ffffff;
         border-bottom: 1px solid #c1c1c1 ;
+        background: #0681BA;
+        
     }
     .title>span {
         font-size: 25px;
         line-height: 50px;
-        color:#333333 ;
+        color: #ffffff;
         padding-left:27px ;
+
     }
     .content {
         width: 100%;

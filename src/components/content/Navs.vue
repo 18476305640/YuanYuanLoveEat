@@ -13,8 +13,8 @@ export default {
     data(){
         return {
             pageMapper:{
-                "base":["用户管理","/base"],
-                "good":["商品管理","/good"]
+                "base":["Point管理","/base"],
+                "good":["用户管理","/good"]
             },
             currentMapper: {}
                

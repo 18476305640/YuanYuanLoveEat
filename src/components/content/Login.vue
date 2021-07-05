@@ -2,21 +2,27 @@
     <div class="login-page-total" v-if="showLogin">
 
         <form class="loginBox">
-            <p>猿猿后台管理系统</p>
-            <input type="text" name="username" placeholder="请输入帐号..."/>
-            <input type="password" name="password" placeholder="请输入密码..."/>
+            <p>GoPoint后台管理系统</p>
+            <input type="text" name="username" v-model="username" placeholder="请输入帐号..."/>
+            <input type="password" name="password" v-model="password" placeholder="请输入密码..."/>
             <button @click="submitx" type="button">登录</button>
-            <span class="msg">{{msg}}</span>
+            <span class="msg" v-show="{showSuccess}">{{msg}}</span>
         </form>
     </div>
 </template>
 <script>
+import {login} from 'network/api/bash'
 export default {
+    
     name: "Login",
     data() {
         return {
-            showLogin:true,
-            msg: ''
+            showLogin:false, //true
+            msg: '',
+            username:'',
+            password:'',
+            showSuccess:false
+
         }
     },
     components: {
@@ -24,10 +30,23 @@ export default {
     },
     methods: {
         submitx() {
-            this.msg = '登录成功~'
-            setTimeout(() => {
-                this.showLogin = false;
-            },2000)
+            
+            login(this.username,this.password).then(res => {
+                var that = this;
+                if(res.code == 20000) {
+                    this.msg = '登录成功~'
+                    that.showSuccess=true;
+                    setTimeout(function(){
+                        that.showLogin = false;
+                    },900)
+                }else {
+                    this.msg = "登录失败"
+                }
+            }).catch(error => {
+                console.log("请求失败",error);
+            })
+
+
         }
     }
 }
