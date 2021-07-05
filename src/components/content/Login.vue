@@ -17,7 +17,7 @@ export default {
     name: "Login",
     data() {
         return {
-            showLogin:false, //true
+            showLogin:true, //true
             msg: '',
             username:'',
             password:'',
